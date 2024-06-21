@@ -37,6 +37,8 @@ function showItemBoolean() {
     showItem = true;
     const showButton = document.getElementById('showButton');
     showButton.classList.add(`noVisible`);
+    const inputObject = document.getElementById('inputter');
+    inputObject.classList.add(`disabled`);
     const resetButton = document.getElementById('resetButton');
     resetButton.classList.remove(`noVisible`);
     showItems();
@@ -120,7 +122,8 @@ function resetSelection() {
     showButton.classList.remove(`noVisible`);
     const resetButton = document.getElementById('resetButton');
     resetButton.classList.add(`noVisible`);
-
+    const inputObject = document.getElementById('inputter');
+    inputObject.classList.remove(`disabled`);
     showItem = false;
     document.getElementById('chipCount').value = 0;
     updateSelectedItems();
