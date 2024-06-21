@@ -50,3 +50,7 @@ button {
 #selectedItems ul li {
     margin: 5px 0;
 }
+
+.noVisible {
+    display: none;
+}
