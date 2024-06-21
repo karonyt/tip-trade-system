@@ -1,3 +1,5 @@
+let showItem = false;
+
 const items = [
     { name: 'スニッカーズ', rank: 'A', points: 4 },
     { name: 'たらたらしてんじゃね～よ', rank: 'A', points: 4 },
@@ -31,17 +33,28 @@ let selectedItems = [];
 let totalPoints = 0;
 let totalItems = 0;
 
+function showItemBoolean() {
+    showItem = true;
+    const showButton = document.getElementById('showButton');
+    showButton.classList.add(`noVisible`);
+    const resetButton = document.getElementById('resetButton');
+    resetButton.classList.remove(`noVisible`);
+    showItems();
+    return;
+};
+
 function showItems() {
+    if(!showItem) return;
     const chipCount = parseInt(document.getElementById('chipCount').value);
     const itemsContainer = document.getElementById('items');
     itemsContainer.innerHTML = '';
 
     if (chipCount >= 2) {
-        const availableItems = items.filter(item => item.points <= chipCount);
+        const availableItems = items.filter(item => item.points <= (chipCount - totalPoints));
         availableItems.forEach(item => {
             const itemElement = document.createElement('div');
             itemElement.classList.add('item');
-            itemElement.textContent = `${item.name} (ランク: ${item.rank}, ポイント: ${item.points})`;
+            itemElement.textContent = `${item.name}`;
             const selectButton = document.createElement('button');
             selectButton.textContent = '選択';
             selectButton.onclick = () => selectItem(item, chipCount);
@@ -82,6 +95,7 @@ function selectItem(item, chipCount) {
     totalItems += 1;
 
     updateSelectedItems();
+    showItems();
 }
 
 function updateSelectedItems() {
@@ -95,4 +109,20 @@ function updateSelectedItems() {
 
     document.getElementById('totalPoints').textContent = totalPoints;
     document.getElementById('totalItems').textContent = totalItems;
+}
+
+function resetSelection() {
+    selectedItems = [];
+    totalPoints = 0;
+    totalItems = 0;
+    const showButton = document.getElementById('showButton');
+    showButton.classList.remove(`noVisible`);
+    const resetButton = document.getElementById('resetButton');
+    resetButton.classList.add(`noVisible`);
+
+    showItem = false;
+    document.getElementById('chipCount').value = 0;
+    updateSelectedItems();
+    const itemsContainer = document.getElementById('items');
+    itemsContainer.innerHTML = '';
 }
