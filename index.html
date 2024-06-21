@@ -12,14 +12,14 @@
         <label for="chipCount">保持チップの枚数を入力してください:</label>
         <input type="number" id="chipCount" min="0" oninput="showItems()">
         <button onclick="showItemBoolean()" id="showButton">選択可能な景品を表示</button>
-        <div id="items"></div>
         <div id="selectedItems">
             <h2>選択された景品</h2>
             <ul id="selectedList"></ul>
             <p>合計チップ: <span id="totalPoints">0</span></p>
             <p>選択された景品数: <span id="totalItems">0</span></p>
-            <button onclick="resetSelection()" id="resetButton" class="noVisible">リセット</button>
         </div>
+        <div id="items"></div>
+        <button onclick="resetSelection()" id="resetButton" class="noVisible">リセット</button>
     </div>
     <script src="script.js"></script>
 </body>
