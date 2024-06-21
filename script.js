@@ -126,3 +126,4 @@ function resetSelection() {
     const itemsContainer = document.getElementById('items');
     itemsContainer.innerHTML = '';
 }
+//ok
