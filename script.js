@@ -84,8 +84,9 @@ function selectItem(item, chipCount) {
             return;
         }
     } else {
-        if (totalItems >= 2 || totalPoints + item.points > 2) {
-            alert('ランクDから2個選べます。');
+        if (totalItems >= 2 || totalPoints + item.points > 1) {
+            const itemsContainer = document.getElementById('items');
+            itemsContainer.innerHTML = '';
             return;
         }
     }
