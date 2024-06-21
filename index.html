@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>交換チップシステム</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>交換チップシステム</h1>
+        <label for="chipCount">保持チップの枚数を入力してください:</label>
+        <input type="number" id="chipCount" min="0">
+        <button onclick="showItems()">交換可能なアイテムを表示</button>
+        <div id="items"></div>
+        <div id="selectedItems">
+            <h2>選択されたアイテム</h2>
+            <ul id="selectedList"></ul>
+            <p>合計ポイント: <span id="totalPoints">0</span></p>
+            <p>選択されたアイテム数: <span id="totalItems">0</span></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

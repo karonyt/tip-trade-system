@@ -1,0 +1,52 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-y: auto;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 500px;
+    width: 100%;
+    margin: 20px;
+    text-align: center;
+}
+
+#items, #selectedItems {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#selectedItems ul {
+    list-style: none;
+    padding: 0;
+}
+
+#selectedItems ul li {
+    margin: 5px 0;
+}
